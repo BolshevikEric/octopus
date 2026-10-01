@@ -138,7 +138,7 @@ func importDB(c *gin.Context) {
 	}
 	for i := range dump.Groups {
 		if dump.Groups[i].Mode == "" {
-			dump.Groups[i].Mode = model.GroupModeManual
+			dump.Groups[i].Mode = model.DefaultGroupMode
 		}
 		model.NormalizeGroupRelayConfig(&dump.Groups[i].RelayConfig)
 		if dump.Groups[i].Mode != model.GroupModeManual && dump.Groups[i].Mode != model.GroupModeFailover {

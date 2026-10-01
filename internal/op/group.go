@@ -83,7 +83,7 @@ func GroupCreate(req *model.GroupCreateRequest, ctx context.Context) (*model.Gro
 		Items:       make([]model.GroupItem, len(req.Items)),
 	}
 	if group.Mode == "" {
-		group.Mode = model.GroupModeManual
+		group.Mode = model.DefaultGroupMode
 	}
 	model.NormalizeGroupRelayConfig(&group.RelayConfig)
 	for i, item := range req.Items {

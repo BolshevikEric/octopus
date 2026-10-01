@@ -8,6 +8,9 @@ const (
 	GroupModeFailover GroupMode = "failover" // 按成员排序选择并在失败时切换。
 )
 
+// DefaultGroupMode 是未指定选择模式时使用的模式, 新建分组默认按成员顺序自动选路。
+const DefaultGroupMode = GroupModeFailover
+
 // 分组 Relay 的持久化配置，数据库中以 JSON 存储。
 type GroupRelayConfig struct {
 	MemberMaxAttempts                     int `json:"member_max_attempts" binding:"omitempty,min=1"`                        // 单个成员包含首次请求的总尝试次数，仅在故障转移模式生效。

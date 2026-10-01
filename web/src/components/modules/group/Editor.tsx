@@ -332,7 +332,7 @@ export function GroupEditor({
     })), [grantCandidates]);
 
     const [groupName, setGroupName] = useState(initial?.name ?? '');
-    const [mode, setMode] = useState<GroupMode>(initial?.mode ?? 'manual');
+    const [mode, setMode] = useState<GroupMode>(initial?.mode ?? 'failover');
     const [relayConfig, setRelayConfig] = useState<GroupRelayConfig>(() => ({
         ...defaultRelayConfig,
         ...initial?.relay_config,
